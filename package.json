@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kiki-kanri/nitro-session.git"
+    "url": "git+https://github.com/kikiutils/nitro-session.git"
   },
   "keywords": [
     "nitro",

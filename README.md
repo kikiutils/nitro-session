@@ -275,5 +275,5 @@ During runtime, the following utils are available for manipulating the session. 
 [npm-downloads-href]: https://npmjs.com/package/@kikiutils/nitro-session
 [npm-downloads-src]: https://img.shields.io/npm/dm/@kikiutils/nitro-session.svg?style=flat&colorA=18181B&colorB=28CF8D
 
-[license-href]: https://github.com/kiki-kanri/nitro-session/blob/main/LICENSE
+[license-href]: https://github.com/kikiutils/nitro-session/blob/main/LICENSE
 [license-src]: https://img.shields.io/npm/l/@kikiutils/nitro-session.svg?style=flat&colorA=18181B&colorB=28CF8D
