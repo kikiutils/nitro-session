@@ -1,5 +1,19 @@
 # Changelog
 
+## v2.0.6
+
+[compare changes](https://github.com/kikiutils/nitro-session/compare/v2.0.5...v2.0.6)
+
+### 🏡 Chore
+
+- Upgrade dependencies ([aa66276](https://github.com/kikiutils/nitro-session/commit/aa66276))
+- Update repository URL ([46b7805](https://github.com/kikiutils/nitro-session/commit/46b7805))
+- Set `hideAuthorEmail` arg in changelogen command ([0e62af6](https://github.com/kikiutils/nitro-session/commit/0e62af6))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.0.5
 
 [compare changes](https://github.com/kikiutils/nitro-session/compare/v2.0.4...v2.0.5)
