@@ -43,7 +43,7 @@
     "dev": "nitro dev",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "release": "pnpm run lint && pnpm run build && changelogen --push --release && npm publish"
+    "release": "pnpm run lint && pnpm run build && changelogen --hideAuthorEmail --push --release && npm publish"
   },
   "dependencies": {
     "consola": "^3.4.0",
