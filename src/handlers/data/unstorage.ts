@@ -39,12 +39,8 @@ export class UnstorageDataHandler {
         return new this(keyLength, storage);
     }
 
-    async delete(key: string) {
-        try {
-            await this.#storage.removeItem(key);
-        } catch (error) {
-            consola.error(error);
-        }
+    delete(key: string) {
+        return this.#storage.removeItem(key).catch(consola.error);
     }
 
     async get(event: H3Event, key: string) {
