@@ -1,5 +1,30 @@
 # Changelog
 
+## v2.0.7
+
+[compare changes](https://github.com/kikiutils/nitro-session/compare/v2.0.6...v2.0.7)
+
+### 🩹 Fixes
+
+- Resolve `consola` import error ([b2ad3ba](https://github.com/kikiutils/nitro-session/commit/b2ad3ba))
+
+### 💅 Refactors
+
+- Remove some `try-catch` blocks and use `promise.catch` for error handling ([4a527eb](https://github.com/kikiutils/nitro-session/commit/4a527eb))
+
+### 📖 Documentation
+
+- Format and lint code block in README ([5213a8e](https://github.com/kikiutils/nitro-session/commit/5213a8e))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([1995767](https://github.com/kikiutils/nitro-session/commit/1995767))
+- Format and lint codes ([ec65bf1](https://github.com/kikiutils/nitro-session/commit/ec65bf1))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.0.6
 
 [compare changes](https://github.com/kikiutils/nitro-session/compare/v2.0.5...v2.0.6)
