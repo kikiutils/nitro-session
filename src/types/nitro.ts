@@ -7,8 +7,24 @@ import type { NitroApp as NitroAppD } from 'nitropack-nightly/types';
 import type { NitroApp as NitroAppC } from 'nitropack/types';
 
 import type { PluginOptions } from './options';
+import type { IfElse } from './utils';
 
-export type NitroApp = (unknown extends NitroAppA ? never : NitroAppA) extends never ? (unknown extends NitroAppB ? never : NitroAppB) extends never ? (unknown extends NitroAppC ? never : NitroAppC) extends never ? NitroAppD : NitroAppC : NitroAppB : NitroAppA;
+export type NitroApp = IfElse<
+    unknown,
+    NitroAppA,
+    IfElse<
+        unknown,
+        NitroAppB,
+        IfElse<
+            unknown,
+            NitroAppC,
+            NitroAppD,
+            NitroAppC
+        >,
+        NitroAppB
+    >,
+    NitroAppA
+>;
 
 declare module 'nitro/types' {
     export interface NitroRuntimeConfig {

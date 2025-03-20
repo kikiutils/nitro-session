@@ -40,7 +40,9 @@ export const getH3EventContextSessionToken = (event: H3Event) => event.context._
 /**
  * Clears the session data in the H3 request event context.
  *
- * Executing this function will not immediately update the session data in storage. The update will occur before the response ends. To clear the data immediately, please use `deleteH3EventContextSessionStorageData`.
+ * Executing this function will not immediately update the session data in storage.
+ * The update will occur before the response ends. To clear the data immediately,
+ * please use `deleteH3EventContextSessionStorageData`.
  *
  * @param {H3Event} event - The H3 request event object.
  *
@@ -67,7 +69,8 @@ export function clearH3EventContextSession(event: H3Event) {
  *
  * @param {H3Event} event - The H3 request event object.
  * @param {K} key - The key of the session context property to be removed and returned.
- * @returns {PartialH3EventContextSession[K]} - The value associated with the specified key, or undefined if the key does not exist.
+ * @returns {PartialH3EventContextSession[K]}
+ * The value associated with the specified key, or undefined if the key does not exist.
  *
  * @example
  * ```typescript

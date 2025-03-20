@@ -1,7 +1,8 @@
+import { Buffer } from 'node:buffer';
+
 import type { H3Event } from 'h3';
 import { merge } from 'lodash-es';
 import { AesCipher } from 'node-ciphers';
-import { Buffer } from 'node:buffer';
 
 import type { DataStorageOptions } from '../../types/options';
 
@@ -20,7 +21,10 @@ export class CookieOrHeaderDataHandler {
             ofb: AesCipher.Ofb,
         } as const;
 
-        if (options?.encryptionMode && !aesModeToCipherClassMap[options.encryptionMode]) throw new Error(`Invalid cookie/header data encryption mode: ${options.encryptionMode}`);
+        if (options?.encryptionMode && !aesModeToCipherClassMap[options.encryptionMode]) {
+            throw new Error(`Invalid cookie/header data encryption mode: ${options.encryptionMode}`);
+        }
+
         if (!options?.key) throw new Error('No cookie/header data encryption key provided');
         const isKeyLengthValid = [
             16,
@@ -45,7 +49,8 @@ export class CookieOrHeaderDataHandler {
 
     get(_: H3Event, token: string) {
         const separatorIndex = token.lastIndexOf(':');
-        if (separatorIndex !== -1) return this.#cipher.decryptToJson<StoredData>(token.slice(0, separatorIndex), token.slice(separatorIndex + 1));
+        if (separatorIndex === -1) return;
+        return this.#cipher.decryptToJson<StoredData>(token.slice(0, separatorIndex), token.slice(separatorIndex + 1));
     }
 
     setOrProcessAndGetToken(_: H3Event, data: StoredData) {

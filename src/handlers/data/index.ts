@@ -14,7 +14,11 @@ export class DataHandler {
     #maxAgeMilliseconds: number;
     #strictIpValidation: boolean;
 
-    private constructor(handler: CookieOrHeaderDataHandler | UnstorageDataHandler, maxAge: number, strictIpValidation: boolean) {
+    private constructor(
+        handler: CookieOrHeaderDataHandler | UnstorageDataHandler,
+        maxAge: number,
+        strictIpValidation: boolean,
+    ) {
         this.#handler = handler;
         this.#maxAgeMilliseconds = maxAge * 1000;
         this.#strictIpValidation = strictIpValidation;
@@ -26,8 +30,9 @@ export class DataHandler {
 
     static async createInstance(options: PluginOptions) {
         let handler;
-        if (options.storage?.data?.driver === 'cookie/header') handler = new CookieOrHeaderDataHandler(options.storage.data.options);
-        else handler = await UnstorageDataHandler.createInstance(options.storage?.data || { driver: 'memory' });
+        if (options.storage?.data?.driver === 'cookie/header') {
+            handler = new CookieOrHeaderDataHandler(options.storage.data.options);
+        } else handler = await UnstorageDataHandler.createInstance(options.storage?.data || { driver: 'memory' });
         return new this(handler, options.maxAge ?? 86400, !!options.strictIpValidation);
     }
 

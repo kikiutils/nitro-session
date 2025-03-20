@@ -25,11 +25,15 @@ export class UnstorageDataHandler {
         const keyLength = options?.key?.length || 24;
         if (keyLength < 24) throw new Error('The unstorage key length must be 24 or more');
         let storage;
-        if (!options?.driver || options?.driver === 'memory') storage = createStorage({ driver: (await importModule('unstorage/drivers/memory'))() });
-        else {
+        if (!options?.driver || options?.driver === 'memory') {
+            storage = createStorage({ driver: (await importModule('unstorage/drivers/memory'))() });
+        } else {
             try {
                 const driver = await importModule(`unstorage/drivers/${options.driver}`);
-                storage = prefixStorage(createStorage({ driver: driver(options.options) }), options.key?.prefix || 'session');
+                storage = prefixStorage(
+                    createStorage({ driver: driver(options.options) }),
+                    options.key?.prefix || 'session',
+                );
             } catch (error) {
                 consola.error(error);
                 throw new Error(`Failed to import or create unstorage driver '${options.driver}', please check if the relevant dependency is installed and the driver is supported and set the correct options.`);
@@ -55,7 +59,7 @@ export class UnstorageDataHandler {
 
     async setOrProcessAndGetToken(event: H3Event, data: StoredData) {
         try {
-            const key = event.context._nitroSessionUnstorageKey || (event.context._nitroSessionUnstorageKey = nanoid(this.#keyLength));
+            const key = event.context._nitroSessionUnstorageKey ||= nanoid(this.#keyLength);
             await this.#storage.setItem(key, data);
             return key;
         } catch (error) {
