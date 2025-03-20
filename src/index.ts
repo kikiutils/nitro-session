@@ -1,4 +1,4 @@
-import consola from 'consola';
+import { consola } from 'consola';
 import type { H3Event } from 'h3';
 import {
     cloneDeep,
