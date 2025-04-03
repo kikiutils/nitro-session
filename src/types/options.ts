@@ -172,10 +172,10 @@ export namespace DataStorageOptions {
              * @default
              * {
              *   decryptInput: 'base64',
-             *   decryptOutput: 'utf8',
-             *   encryptInput: 'utf8',
+             *   decryptOutput: 'utf-8',
+             *   encryptInput: 'utf-8',
              *   encryptOutput: 'base64',
-             *   key: 'utf8',
+             *   key: 'utf-8',
              *   iv: 'base64'
              * }
              */
