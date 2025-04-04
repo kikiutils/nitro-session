@@ -40,7 +40,7 @@ async function createHandlers(options: Required<PluginOptions>) {
 
 export async function initialization(framework: 'Nitro' | 'Nuxt', options?: PluginOptions) {
     consola.info(`Initializing ${framework} session...`);
-    const pluginOptions = merge(defaultOptions, cloneDeep(options || {}));
+    const pluginOptions = merge(cloneDeep(defaultOptions), options);
     if (!pluginOptions.enabled) return consola.info(`${framework} session disabled.`);
     consola.info(`${framework} session configured data with '${pluginOptions.storage.data.driver}' driver.`);
     consola.info(`${framework} session configured token with '${pluginOptions.storage.token.driver}' driver.`);
