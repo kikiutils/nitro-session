@@ -1,7 +1,6 @@
 import { Buffer } from 'node:buffer';
 
 import type { H3Event } from 'h3';
-import { merge } from 'lodash-es';
 import { AesCipher } from 'node-ciphers';
 
 import type { DataStorageOptions } from '../../types/options';
@@ -34,7 +33,7 @@ export class CookieOrHeaderDataHandler {
         if (!isKeyLengthValid) throw new Error('Invalid cookie/header data encryption key length');
         this.#cipher = new aesModeToCipherClassMap[options.encryptionMode || 'ctr'](
             options.key,
-            merge(
+            Object.assign(
                 {
                     decryptInput: 'base64',
                     encryptOutput: 'base64',
