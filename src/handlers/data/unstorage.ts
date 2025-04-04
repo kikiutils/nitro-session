@@ -36,6 +36,7 @@ export class UnstorageDataHandler {
                 );
             } catch (error) {
                 consola.error(error);
+                // eslint-disable-next-line style/max-len
                 throw new Error(`Failed to import or create unstorage driver '${options.driver}', please check if the relevant dependency is installed and the driver is supported and set the correct options.`);
             }
         }
