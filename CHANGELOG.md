@@ -1,5 +1,26 @@
 # Changelog
 
+## v2.0.8
+
+[compare changes](https://github.com/kikiutils/nitro-session/compare/v2.0.7...v2.0.8)
+
+### 🩹 Fixes
+
+- Correct `pluginOptions` handling in `initialization` ([0b1fb7d](https://github.com/kikiutils/nitro-session/commit/0b1fb7d))
+
+### 💅 Refactors
+
+- Freeze `defaultOptions` constant with `Object.freeze` ([8c11eed](https://github.com/kikiutils/nitro-session/commit/8c11eed))
+- Use `Object.assign` to merge `encodingOptions` in `CookieOrHeaderDataHandler` cipher initialization ([6158242](https://github.com/kikiutils/nitro-session/commit/6158242))
+
+### 🏡 Chore
+
+- Change `utf8` option to `utf-8` ([87276ad](https://github.com/kikiutils/nitro-session/commit/87276ad))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.0.7
 
 [compare changes](https://github.com/kikiutils/nitro-session/compare/v2.0.6...v2.0.7)
