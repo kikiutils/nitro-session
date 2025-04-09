@@ -1,5 +1,28 @@
 # Changelog
 
+## v3.0.0
+
+[compare changes](https://github.com/kikiutils/nitro-session/compare/v2.0.8...v3.0.0)
+
+### 💅 Refactors
+
+- ⚠️ Remove most default exports ([5d9c63b](https://github.com/kikiutils/nitro-session/commit/5d9c63b))
+
+### 🏡 Chore
+
+- Upgrade dependencies ([5239dbb](https://github.com/kikiutils/nitro-session/commit/5239dbb))
+- Use `// eslint-disable-next-line style/max-len` to disable some eslint warning ([5f1d441](https://github.com/kikiutils/nitro-session/commit/5f1d441))
+- Upgrade dependencies ([f40498d](https://github.com/kikiutils/nitro-session/commit/f40498d))
+- Update code to accommodate dependency updates ([31c1c40](https://github.com/kikiutils/nitro-session/commit/31c1c40))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️ Remove most default exports ([5d9c63b](https://github.com/kikiutils/nitro-session/commit/5d9c63b))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v2.0.8
 
 [compare changes](https://github.com/kikiutils/nitro-session/compare/v2.0.7...v2.0.8)
