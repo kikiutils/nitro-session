@@ -1,23 +1,23 @@
 import { Buffer } from 'node:buffer';
 
 import type { H3Event } from 'h3';
-import { AesCipher } from 'node-ciphers';
+import { AesCiphers } from 'node-ciphers';
 
 import type { DataStorageOptions } from '../../types/options';
 
 import type { StoredData } from './';
 
 export class CookieOrHeaderDataHandler {
-    #cipher: AesCipher.Cbc | AesCipher.Cfb | AesCipher.Cfb1 | AesCipher.Cfb8 | AesCipher.Ctr | AesCipher.Ofb;
+    #cipher: AesCiphers.Cbc | AesCiphers.Cfb | AesCiphers.Cfb1 | AesCiphers.Cfb8 | AesCiphers.Ctr | AesCiphers.Ofb;
 
     constructor(options?: DataStorageOptions.CookieOrHeader['options']) {
         const aesModeToCipherClassMap = {
-            cbc: AesCipher.Cbc,
-            cfb: AesCipher.Cfb,
-            cfb1: AesCipher.Cfb1,
-            cfb8: AesCipher.Cfb8,
-            ctr: AesCipher.Ctr,
-            ofb: AesCipher.Ofb,
+            cbc: AesCiphers.Cbc,
+            cfb: AesCiphers.Cfb,
+            cfb1: AesCiphers.Cfb1,
+            cfb8: AesCiphers.Cfb8,
+            ctr: AesCiphers.Ctr,
+            ofb: AesCiphers.Ofb,
         } as const;
 
         if (options?.encryptionMode && !aesModeToCipherClassMap[options.encryptionMode]) {
