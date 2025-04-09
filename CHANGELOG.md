@@ -1,5 +1,18 @@
 # Changelog
 
+## v3.0.1
+
+[compare changes](https://github.com/kikiutils/nitro-session/compare/v3.0.0...v3.0.1)
+
+### 🏡 Chore
+
+- Set `types` field in package.json ([2db0f6f](https://github.com/kikiutils/nitro-session/commit/2db0f6f))
+- Set `sideEffects` to false in package.json ([1bf1d53](https://github.com/kikiutils/nitro-session/commit/1bf1d53))
+
+### ❤️ Contributors
+
+- kiki-kanri
+
 ## v3.0.0
 
 [compare changes](https://github.com/kikiutils/nitro-session/compare/v2.0.8...v3.0.0)
