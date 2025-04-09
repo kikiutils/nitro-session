@@ -57,5 +57,3 @@ export class CookieOrHeaderDataHandler {
         if (encryptResult) return `${encryptResult.data}:${encryptResult.iv}`;
     }
 }
-
-export default CookieOrHeaderDataHandler;

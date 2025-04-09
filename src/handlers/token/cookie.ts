@@ -44,5 +44,3 @@ export class CookieTokenHandler {
         setCookie(event, this.#name, value, this.#serializeOptions);
     }
 }
-
-export default CookieTokenHandler;

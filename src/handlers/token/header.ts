@@ -27,5 +27,3 @@ export class HeaderTokenHandler {
         setHeader(event, this.#setName, value);
     }
 }
-
-export default HeaderTokenHandler;

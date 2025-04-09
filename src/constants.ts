@@ -1,4 +1,4 @@
-import type DataHandler from './handlers/data';
+import type { DataHandler } from './handlers/data';
 
 export const cachedHandlers: { data?: DataHandler } = {};
 export const defaultOptions = Object.freeze({

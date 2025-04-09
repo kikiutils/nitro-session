@@ -68,5 +68,3 @@ export class UnstorageDataHandler {
         }
     }
 }
-
-export default UnstorageDataHandler;

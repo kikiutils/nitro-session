@@ -10,8 +10,8 @@ import {
     defaultOptions,
 } from './constants';
 import { DataHandler } from './handlers/data';
-import CookieTokenHandler from './handlers/token/cookie';
-import HeaderTokenHandler from './handlers/token/header';
+import { CookieTokenHandler } from './handlers/token/cookie';
+import { HeaderTokenHandler } from './handlers/token/header';
 import type { NitroApp } from './types/nitro';
 import type { PluginOptions } from './types/options';
 import type { PartialH3EventContextSession } from './types/session';
@@ -49,6 +49,19 @@ export async function initialization(framework: 'Nitro' | 'Nuxt', options?: Plug
         handlers,
         pluginOptions,
     };
+}
+
+export async function nitroSession(nitroApp: NitroApp, options?: PluginOptions) {
+    const initializationResult = await initialization('Nitro', options);
+    if (!initializationResult) return;
+    await registerHooksAndSetupCachedHandlers(
+        nitroApp,
+        initializationResult.pluginOptions,
+        false,
+        initializationResult.handlers,
+    );
+
+    consola.success('Nitro session initialization successful.');
 }
 
 export async function registerHooksAndSetupCachedHandlers(
@@ -91,16 +104,3 @@ export async function registerHooksAndSetupCachedHandlers(
         setupH3EventContextSession(event, sessionData || {});
     });
 }
-
-export default async (nitroApp: NitroApp, options?: PluginOptions) => {
-    const initializationResult = await initialization('Nitro', options);
-    if (!initializationResult) return;
-    await registerHooksAndSetupCachedHandlers(
-        nitroApp,
-        initializationResult.pluginOptions,
-        false,
-        initializationResult.handlers,
-    );
-
-    consola.success('Nitro session initialization successful.');
-};

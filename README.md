@@ -35,7 +35,7 @@ You can also use yarn, npm, or bun to add the dependency.
 2. Create a `server/plugins/session.ts` file and add the following code:
 
 ```typescript
-import nitroSession from '@kikiutils/nitro-session';
+import { nitroSession } from '@kikiutils/nitro-session';
 
 export default defineNitroPlugin((nitroApp) => nitroSession(nitroApp, useRuntimeConfig().nitroSession));
 ```

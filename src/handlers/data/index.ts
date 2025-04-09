@@ -4,8 +4,8 @@ import type { H3Event } from 'h3';
 import type { PluginOptions } from '../../types/options';
 import type { PartialH3EventContextSession } from '../../types/session';
 
-import CookieOrHeaderDataHandler from './cookie-or-header';
-import UnstorageDataHandler from './unstorage';
+import { CookieOrHeaderDataHandler } from './cookie-or-header';
+import { UnstorageDataHandler } from './unstorage';
 
 export type StoredData = [number, PartialH3EventContextSession, ip?: string];
 
@@ -58,5 +58,3 @@ export class DataHandler {
         return await this.#handler.setOrProcessAndGetToken(event, toSetData);
     }
 }
-
-export default DataHandler;
