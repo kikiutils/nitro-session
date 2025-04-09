@@ -16,6 +16,7 @@
     "nitropack session",
     "session"
   ],
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
